@@ -8,7 +8,7 @@ import {
     ApiTags,
     OmitType,
 } from '@nestjs/swagger';
-import { UsuarioService } from 'src/modules/usuario/usuario.service';
+import { UsuarioService } from '../../modules/usuario/usuario.service';
 import { UsuarioDto } from './usuario.dto';
 
 class LoginForm {

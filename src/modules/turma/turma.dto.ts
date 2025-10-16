@@ -1,7 +1,7 @@
 import { IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Desafio, Prisma, Turma } from '@prisma/client';
-import { BaseDto } from 'src/dtos/base.dto';
+import { BaseDto } from '../../dtos/base.dto';
 import { DesafioDto } from '../desafio/desafio.dto';
 
 export class TurmaDto extends BaseDto {

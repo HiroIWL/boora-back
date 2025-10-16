@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNumberString, IsOptional, IsString } from 'class-validator';
-import { TipoUsuario } from 'src/enums/tipo_usuario.enum';
+import { TipoUsuario } from '../../enums/tipo_usuario.enum';
 import { Prisma, Turma, Usuario } from '@prisma/client';
-import { BaseDto } from 'src/dtos/base.dto';
+import { BaseDto } from '../../dtos/base.dto';
 import { TurmaDto } from '../turma/turma.dto';
 
 export class UsuarioDto extends BaseDto {

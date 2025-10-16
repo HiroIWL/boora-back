@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import * as bcrypt from 'bcrypt';
-import { JwtPayload } from 'src/auth/jwt-payload.interface';
+import { JwtPayload } from '../../auth/jwt-payload.interface';
 import { JwtService } from '@nestjs/jwt';
-import { TipoUsuario } from 'src/enums/tipo_usuario.enum';
+import { TipoUsuario } from '../../enums/tipo_usuario.enum';
 import { Prisma } from '@prisma/client';
 import { UsuarioDto } from './usuario.dto';
 

@@ -1,6 +1,6 @@
 import { Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { TurmaService } from 'src/modules/turma/turma.service';
+import { TurmaService } from '../../modules/turma/turma.service';
 import { TurmaDto } from './turma.dto';
 
 @Controller('turmas')

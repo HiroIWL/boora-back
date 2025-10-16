@@ -5,13 +5,13 @@ import {
     ApiResponse,
     ApiTags,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { RolesGuard } from 'src/auth/roles.guard';
-import { Roles } from 'src/auth/roles.decorator';
+import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
+import { RolesGuard } from '../../auth/roles.guard';
+import { Roles } from '../../auth/roles.decorator';
 import { TipoUsuario } from '@prisma/client';
 import { RankingService } from './ranking.service';
 import { RankingDto } from './ranking.dto';
-import type { AuthenticatedRequest } from 'src/auth/authenticated-request.interface';
+import type { AuthenticatedRequest } from '../../auth/authenticated-request.interface';
 import { RankingAlunoDto } from './ranking-aluno.dto';
 
 @Controller('ranking')

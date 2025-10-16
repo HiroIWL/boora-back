@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpCode, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UsuarioService } from 'src/modules/usuario/usuario.service';
+import { UsuarioService } from '../../modules/usuario/usuario.service';
 import { UsuarioDto } from './usuario.dto';
 
 @Controller('professores')

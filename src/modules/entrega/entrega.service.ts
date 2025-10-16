@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { EntregaDto } from './entrega.dto';
-import { TipoUsuario } from 'src/enums/tipo_usuario.enum';
+import { TipoUsuario } from '../../enums/tipo_usuario.enum';
 import { connect } from 'http2';
 
 @Injectable()

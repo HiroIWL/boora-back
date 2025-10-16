@@ -4,11 +4,11 @@ import {
     NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { DesafioDto } from 'src/modules/desafio/desafio.dto';
+import { DesafioDto } from '../../modules/desafio/desafio.dto';
 import { DesafioTurmaDto } from './desafio-turma.dto';
 import { Prisma } from '@prisma/client';
 import { UsuarioDto } from '../usuario/usuario.dto';
-import { TipoUsuario } from 'src/enums/tipo_usuario.enum';
+import { TipoUsuario } from '../../enums/tipo_usuario.enum';
 
 @Injectable()
 export class DesafioService {

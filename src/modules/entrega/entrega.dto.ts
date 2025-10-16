@@ -1,8 +1,8 @@
 import { IsNumber, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Desafio, Entrega, Prisma, Usuario } from '@prisma/client';
-import { UsuarioDto } from 'src/modules/usuario/usuario.dto';
-import { BaseDto } from 'src/dtos/base.dto';
+import { UsuarioDto } from '../../modules/usuario/usuario.dto';
+import { BaseDto } from '../../dtos/base.dto';
 import { DesafioDto } from '../desafio/desafio.dto';
 
 export class EntregaDto extends BaseDto {

@@ -17,12 +17,12 @@ import {
     OmitType,
 } from '@nestjs/swagger';
 import { Desafio, DesafioTurma, TipoUsuario } from '@prisma/client';
-import { Roles } from 'src/auth/roles.decorator';
-import { RolesGuard } from 'src/auth/roles.guard';
-import { DesafioService } from 'src/modules/desafio/desafio.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { type AuthenticatedRequest } from 'src/auth/authenticated-request.interface';
-import { DesafioDto } from 'src/modules/desafio/desafio.dto';
+import { Roles } from '../../auth/roles.decorator';
+import { RolesGuard } from '../../auth/roles.guard';
+import { DesafioService } from '../../modules/desafio/desafio.service';
+import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
+import { type AuthenticatedRequest } from '../../auth/authenticated-request.interface';
+import { DesafioDto } from '../../modules/desafio/desafio.dto';
 import { DesafioTurmaDto } from './desafio-turma.dto';
 
 class VincularTurma {
