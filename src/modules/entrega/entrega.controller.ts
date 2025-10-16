@@ -16,11 +16,11 @@ import {
 } from '@nestjs/swagger';
 import { EntregaService } from './entrega.service';
 import { EntregaDto } from './entrega.dto';
-import { Roles } from 'src/auth/roles.decorator';
-import { RolesGuard } from 'src/auth/roles.guard';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { TipoUsuario } from 'src/enums/tipo_usuario.enum';
-import type { AuthenticatedRequest } from 'src/auth/authenticated-request.interface';
+import { Roles } from '../../auth/roles.decorator';
+import { RolesGuard } from '../../auth/roles.guard';
+import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
+import { TipoUsuario } from '../../enums/tipo_usuario.enum';
+import type { AuthenticatedRequest } from '../../auth/authenticated-request.interface';
 
 @Controller('entregas')
 @ApiTags('entregas')
