@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Turma {
+  id       String         @id @default(uuid())
+  nome     String
+  desafios DesafioTurma[]
+  alunos   Usuario[]
+}
+
+model Usuario {
+  id              String      @id @default(uuid())
+  nome            String
+  senha           String
+  tipo            TipoUsuario
+  codigo_registro String      @unique
+  id_turma        String?
+
+  entregas Entrega[]
+  desafios Desafio[]
+  turma    Turma?    @relation(fields: [id_turma], references: [id])
+}
+
+model Desafio {
+  id                   String    @id @default(uuid())
+  nome                 String
+  duracao              Int // duração em minutos
+  descricao            String
+  video_url            String
+  nota_maxima          Decimal   @db.Decimal(5, 2)
+  ordem                Int       @default(autoincrement()) // ordem sequencial
+  id_usuario_professor String
+  data_desafio         DateTime?
+
+  professor Usuario        @relation(fields: [id_usuario_professor], references: [id])
+  turmas    DesafioTurma[]
+  entregas  Entrega[]
+}
+
+model Entrega {
+  id               String   @id @default(uuid())
+  id_desafio       String
+  id_usuario_aluno String
+  video_url        String
+  nota             Decimal? @db.Decimal(5, 2)
+
+  desafio Desafio @relation(fields: [id_desafio], references: [id])
+  aluno   Usuario @relation(fields: [id_usuario_aluno], references: [id])
+
+  @@unique([id_desafio, id_usuario_aluno])
+}
+
+model DesafioTurma {
+  id         String @id @default(uuid())
+  id_desafio String
+  id_turma   String
+
+  desafio Desafio @relation(fields: [id_desafio], references: [id])
+  turma   Turma   @relation(fields: [id_turma], references: [id])
+}
+
+enum TipoUsuario {
+  PROFESSOR
+  ALUNO
+}
